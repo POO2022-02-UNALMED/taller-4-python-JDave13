@@ -1,8 +1,5 @@
-
-
 from classroom.asignatura import Asignatura
 from classroom.asignatura import Asignatura
-
 
 class Grupo:
 
@@ -16,7 +13,8 @@ class Grupo:
     def __str__(self):
         return "Grupo de estudiantes: grupo predeterminado"
 
-    def listadoAsignaturas(self, kwargs):
+    def listadoAsignaturas(self, **kwargs):
+        
         if(self._asignaturas is None):
             self._asignaturas=[]
         for x in kwargs.values():
@@ -28,7 +26,8 @@ class Grupo:
         else:
             self.listadoAlumnos=[alumno]
         lista.append(alumno)
-        self.listadoAlumnos=lista
+        self.listadoAlumnos = lista
+        
 
     @ classmethod
     def asignarNombre(cls, nombre="Grado 10"):
